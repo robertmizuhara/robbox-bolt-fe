@@ -1,0 +1,40 @@
+   /* styles.css or App.css */
+   .slow-spin {
+    animation: slow-spin 3s linear infinite; /* Adjust the duration as needed */
+  }
+
+  @keyframes slow-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes slide-in {
+    0% {
+      transform: translateY(100%); /* Start off-screen */
+    }
+    100% {
+      transform: translateY(0); /* End at the bottom of the screen */
+    }
+  }
+  
+  .animate-slide-in {
+    animation: slide-in 0.75s ease forwards; /* Animation for appearing */
+  }
+  
+  .animate-slide-out {
+    animation: slide-out 0.75s ease forwards; /* Animation for disappearing */
+  }
+  
+  @keyframes slide-out {
+    0% {
+      transform: translateY(0); /* Start at the bottom of the screen */
+    }
+    100% {
+      transform: translateY(100%); /* Move off-screen */
+    }
+  }
+  
