@@ -69,7 +69,7 @@ export function GameLobby({ gameCode, clientUuid }: GameLobbyProps) {
   const isStartButtonEnabled = players.length >= minPlayers;
 
   return (
-    <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-3xl mx-auto">
+    <div className="mt-16 mx-auto max-w-3xl w-full bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
       <div className="flex flex-col items-center space-y-6">
         <div className="text-center space-y-2">
           <h2 className="text-white font-bold text-3xl">{getGameDisplayName(gameType || '...')}</h2>
@@ -142,11 +142,7 @@ export function GameLobby({ gameCode, clientUuid }: GameLobbyProps) {
             </span>
             <div className="flex items-center">
               <span className="text-gray-400">Waiting for players...</span>
-              {players.length >= minPlayers ? (
-                <Check className="w-6 h-6 text-green-400 ml-2" />
-              ) : (
-                <Loader className="slow-spin w-6 h-6 text-white ml-2" />
-              )}
+              <Loader className="slow-spin w-6 h-6 text-white ml-2" />
             </div>
           </div>
         </div>
