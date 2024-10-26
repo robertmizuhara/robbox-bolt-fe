@@ -5,25 +5,23 @@ export function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleHomeClick = () => {
+  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (location.pathname !== '/') {
       // Clear any stored game session data
       localStorage.removeItem('gameCode');
       localStorage.removeItem('clientUuid');
-      
-      // Navigate to root
-      navigate('/', { replace: true });
     }
   };
 
   return (
-    <button
+    <a
+      href="/"
       onClick={handleHomeClick}
-      className="sticky w-full bg-gray-800 border-b border-white/20 p-3 hover:bg-gray-700 transition-colors z-500 mb-0"
+      className="block w-full bg-gray-800 border-b border-white/20 p-4 hover:bg-gray-700 transition-colors z-50 text-center"
     >
       <span className="text-2xl font-bold italic text-white antialiased">
         robbox.tv
       </span>
-    </button>
+    </a>
   );
 }

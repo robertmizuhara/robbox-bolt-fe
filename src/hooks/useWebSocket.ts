@@ -7,8 +7,8 @@ interface WebSocketMessage {
 }
 
 const WS_RECONNECT_DELAY = 2000;
-const MAX_RECONNECT_ATTEMPTS = 3;
-const PING_INTERVAL = 15000;
+const MAX_RECONNECT_ATTEMPTS = 5;
+const PING_INTERVAL = 1500;
 
 export function useWebSocket(clientUuid: string, gameCode: string) {
   console.log('useWebSocket hook initialized', { clientUuid, gameCode });

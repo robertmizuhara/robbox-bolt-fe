@@ -17,8 +17,8 @@ export const AVAILABLE_GAMES: { id: keyof typeof GAME_TYPES; title: string; desc
     title: GAME_TYPES.drawguess,
     description: 'Draw pictures and let others guess what it is!',
     icon: PenTool,
-    players: '1-12 players',
-    minPlayers: 1,
+    players: '2-12 players',
+    minPlayers: 2,
   },
   {
     id: 'trivia',

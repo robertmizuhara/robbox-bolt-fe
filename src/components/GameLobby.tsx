@@ -141,8 +141,17 @@ export function GameLobby({ gameCode, clientUuid }: GameLobbyProps) {
               {isConnected ? 'Connected' : 'Connecting...'}
             </span>
             <div className="flex items-center">
-              <span className="text-gray-400">Waiting for players...</span>
-              <Loader className="slow-spin w-6 h-6 text-white ml-2" />
+              {players.filter(player => player.isConnected).length >= minPlayers ? ( // Check for connected players
+                <div className="flex items-center text-green-400">
+                  <Check className="w-6 h-6" /> {/* Check icon from lucide-react */}
+                  <span className="ml-2">Ready to start!</span>
+                </div>
+              ) : (
+                <>
+                  <span className="text-gray-400">Waiting for players...</span>
+                  <Loader className="slow-spin w-6 h-6 text-white ml-2" />
+                </>
+              )}
             </div>
           </div>
         </div>
